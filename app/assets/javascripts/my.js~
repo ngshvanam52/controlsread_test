@@ -1,0 +1,18 @@
+$(document).ready(function(){
+ 
+ //alert($("iframe").contents().find("body").html());
+
+});
+
+function finddom()
+{
+	 $("iframe").contents().find("*").each(function(index,ele){
+	 	 alert(ele.tagName);
+	    if (ele.tagName == "INPUT")
+			$("#list").append("<tr><td>" + ele.tagName +"</td><td>"+ele.type+"</td><td>"+ ele.value+"</td></tr>");	    
+	    else if (ele.tagName == "BUTTON")
+			$("#list").append("<tr><td>" + ele.tagName +"</td><td>"+ele.type+"</td><td>"+ ele.value+"</td></tr>");
+	    else if (ele.tagName == "SELECT")
+	      $("#list").append("<tr><td>" + ele.tagName +"</td><td>"+ele.type+"</td><td>"+ ele.value+"</td></tr>");
+	 });
+}
