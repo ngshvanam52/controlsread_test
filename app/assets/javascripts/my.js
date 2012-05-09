@@ -26,7 +26,6 @@ $(function() {
 			highlight(e);
 		        selecteddomelement(e.target);
 		}
-			
 	    });
 
 	    $(window.ifr.document.getElementsByTagName("body")[0]).bind('keydown', 'shift+tab', function(e){ 
@@ -34,7 +33,6 @@ $(function() {
 			highlight(e);
 		        selecteddomelement(e.target);
 		}
-			
 	    });
 
 	    $("iframe").contents().find("*").each(function(ind,ele){
