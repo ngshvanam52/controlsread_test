@@ -11,6 +11,8 @@ class UsersController < ApplicationController
 
   def parse
 	@url=params[:surl];
+	#response = Typhoeus::Request.get("http://localhost:3000/index.html")
+	#@temp = response.body
   end
 
 end

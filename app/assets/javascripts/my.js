@@ -1,6 +1,4 @@
-$(document).ready(function(){
 
-});
 
 var ifr_loaded = false;
 $("iframe").load(function() {
@@ -47,7 +45,8 @@ $(function() {
 			highlight(e);
 		        selecteddomelement(e.target);
 		 }
-		 	e.preventDefault();
+		   	e.preventDefault();
+         		e.stopPropagation();
 		}
 	    });
         });
@@ -59,7 +58,6 @@ $(function() {
 function highlight(e)
 {
       if (e.target.tagName == "INPUT" || e.target.tagName == "BUTTON" || e.target.tagName == "SELECT" || e.target.tagName == "RADIO") {
-
 
 	$(frames['ifr'].document.getElementsByTagName("div")).remove();
 	$("iframe").contents().find("*").removeAttr("selected");
@@ -86,6 +84,7 @@ function highlight(e)
 		$(frames['ifr'].document.getElementsByTagName("div")).remove();
 	}	
 	frames['ifr'].document.body.appendChild(divtag);
+
       }
 }
 
@@ -96,14 +95,15 @@ function selecteddomelement(ele)
 	    $("#result").html("");
             var txt=""
 	    if (ele.tagName == "INPUT" || ele.tagName == "BUTTON" || ele.tagName == "SELECT" || ele.tagName == "RADIO") {
-		txt += "<tr id="+$(ele).attr('index')+"><td>TagName : "+ele.tagName+"</td><td>" 
+		txt += "<tr valign='top' id="+$(ele).attr('index')+"><td>TagName : "+ele.tagName+"</td><td>" 
 		$($(ele).listAttributes()).each(function(ind,attr){
 			if(attr != "index" && attr != "selected")
-			 txt += attr+" : "+ele[attr];
+			 txt += attr+" : "+ele[attr]+"</br>";
 		});
 		txt += "</td></tr>";
 	     }
 	    $("#result").append(txt);
+
 }
 
 
@@ -116,11 +116,10 @@ function finddom()
 		txt += "<tr><td>" + ele.tagName +"</td><td>"
 
 		$($(ele).listAttributes()).each(function(ind,attr){
-			txt += "</td><td>"+attr+":"+ele[attr];			
+   		       if(attr != "index" && attr != "selected")
+			txt += attr+":"+ele[attr]+"</br>";			
 		});
-
 		txt += "</td></tr>";
-
 		$("#list").append(txt);	    
 	     }
 	 });
