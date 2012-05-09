@@ -62,7 +62,6 @@ function highlight(e)
 	$(frames['ifr'].document.getElementsByTagName("div")).remove();
 	$("iframe").contents().find("*").removeAttr("selected");
 
-
 	var divtag = frames['ifr'].document.createElement("div"); 
 	$(divtag).css({ 'background-color' : '#c1c1c1', 'border' : '3px solid orange', 'opacity' : '0.6', 'position': 'absolute', 'filter' : 'alpha(opacity=60)' });  
 	if($(e.target).width() == 0) {
@@ -103,7 +102,6 @@ function selecteddomelement(ele)
 		txt += "</td></tr>";
 	     }
 	    $("#result").append(txt);
-
 }
 
 
