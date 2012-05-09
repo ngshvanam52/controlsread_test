@@ -8,7 +8,7 @@ ControlsreadTest::Application.routes.draw do
   post "users/parse"
 
   match "/apical", :to=>"typo#apical"
-  match "inspect", :to=>"users#new"
+  match "/inspect", :to=>"users#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
