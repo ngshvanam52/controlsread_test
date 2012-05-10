@@ -21,6 +21,7 @@ require 'open-uri'
 
 	body = open(params[:surl]).read
 	@temp = body.gsub!("\\","\n")
+	puts "=======================#{@temp}==========================="
 	@temp = @temp.gsub!("\n","\\\n")
 
 	#puts "#{@temp}"
