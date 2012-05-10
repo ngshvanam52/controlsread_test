@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 require 'rubygems'
 #require File.dirname(__FILE__) + '/../../lib/typhoeus.rb'
 require 'typhoeus'
-#require 'json'	
+require 'json'	
 
 #require 'open-uri'
   def new

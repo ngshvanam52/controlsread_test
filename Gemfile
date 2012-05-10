@@ -26,8 +26,8 @@ gem 'jquery-rails'
 
 group :production do
   gem 'therubyracer-heroku', '0.8.1.pre3'
-  gem "pg"
-  gem "typhoeus"
+  gem 'pg'
+  gem 'typhoeus', '0.2.4'
 end
 
 # To use ActiveModel has_secure_password
