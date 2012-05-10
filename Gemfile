@@ -11,6 +11,7 @@ gem 'json'
 
 # Gems used only for assets and not required
 # in production environments by default.
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -25,9 +26,11 @@ gem 'jquery-rails'
 
 
 group :production do
+
   gem 'therubyracer-heroku', '0.8.1.pre3'
   gem 'pg'
-  gem 'typhoeus'
+  #gem 'typhoeus'
+
 end
 
 # To use ActiveModel has_secure_password
