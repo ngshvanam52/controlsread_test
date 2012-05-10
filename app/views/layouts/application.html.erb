@@ -9,16 +9,17 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 <script language="javascript">
-$(document).ready(function(){
+ $(document).ready(function(){
+  myFrame = top.frames['ifr'];
+  myFrame.document.open();
+  myFrame.document.write(Encoder.htmlDecode("<%=@temp%>")); //Encoder.htmlDecode()
+  myFrame.document.close();
+ });
 
- myFrame = top.frames['ifr'];
- myFrame.document.open();
- myFrame.document.write(Encoder.htmlDecode("<%=@temp%>")); //Encoder.htmlDecode()
- myFrame.document.close();
-
-});
 </script>
+
 </head>
 <body>
 
