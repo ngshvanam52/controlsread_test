@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-require 'rubygems'
-require File.dirname(__FILE__) + '/../../lib/typhoeus.rb'
-require 'json'	
+#require 'rubygems'
+#require File.dirname(__FILE__) + '/../../lib/typhoeus.rb'
+#require 'json'	
 
   def new
 	#response = Typhoeus::Request.get("http://localhost:3000/index.html")
@@ -11,8 +11,11 @@ require 'json'
 
   def parse
 	#@url=params[:surl];
-	response = Typhoeus::Request.get(params[:surl])
-	@temp = response.body.gsub!("\n","")
+	require 'open-uri'
+	body = open(params[:surl]).read
+	#response = Typhoeus::Request.get(params[:surl])
+	#@temp = response.body.gsub!("\n","")
+	@temp = body.gsub!("\n","")
 	puts "#{@temp}"
   end
 
